@@ -16,7 +16,6 @@ ctest --test-dir "$BUILD_DIR" --output-on-failure
 rm -rf "$STAGE"
 mkdir -p "$STAGE/DEBIAN" \
          "$STAGE/usr/bin" \
-         "$STAGE/usr/share/applications" \
          "$STAGE/usr/share/APPLaunch/applications" \
          "$STAGE/usr/share/APPLaunch/share/images"
 
@@ -36,7 +35,6 @@ Terminal=false
 Categories=Utility;
 EOF
 chmod 644 "$STAGE/usr/share/APPLaunch/applications/means-arms-zero.desktop"
-cp "$STAGE/usr/share/APPLaunch/applications/means-arms-zero.desktop" "$STAGE/usr/share/applications/means-arms-zero.desktop"
 
 INSTALLED_KB="$(du -sk "$STAGE/usr" | awk '{print $1}')"
 
